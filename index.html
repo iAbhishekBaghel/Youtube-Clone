@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Youtube-Clone</title>
+</head>
+
+<body>
+    <!-------- navbar start --------->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="https://icon-library.com/images/menu-icon-png-3-lines/menu-icon-png-3-lines-16.jpg"
+                alt="menu-icon" class="menu-icon">
+            <img src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png" class="logo">
+        </div>
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="search">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-bd-o2iClEsR4G-NcgUfpYZXdEvx7VdgnbQ&usqp=CAU"
+                    alt="search-icon">
+            </div>
+            <img src="data:image/png;base64,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"
+                class="mic-icon" alt="mic-icon">
+        </div>
+        <div class="nav-right flex-div">
+            <img src="https://t3.ftcdn.net/jpg/04/83/02/54/360_F_483025489_pnTiGXRfNp73B68Qihy5qmiwt0VIqzrp.jpg"
+                alt="upload-icon">
+            <img src="https://icones.pro/wp-content/uploads/2022/02/icone-de-cloche-grise.png" alt="bell-icon">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
+                class="user-icon" alt="">
+        </div>
+    </nav>
+    <!-------- navbar end --------->
+    <!-------- sidebar start --------->
+    <div class="sidebar">
+        <div class="shortcut-links">
+            <a href=""><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1T-3pZnIqW8Za0f_93Vy58gacAZJhC084Q&usqp=CAU"
+                    alt="home-icon">
+                <p>Home</p>
+            </a>
+            <a href=""><img src="https://icons.veryicon.com/png/o/miscellaneous/project-icon-1/explore-13.png" alt="">
+                <p>Explore</p>
+            </a>
+            <a href=""><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/subscription-1666323-1415827.png"
+                    alt="">
+                <p>Subscription</p>
+            </a>
+            <a href=""><img
+                    src="https://static.vecteezy.com/system/resources/previews/011/994/022/original/simple-video-library-icon-sign-design-free-png.png"
+                    alt="">
+                <p>Library</p>
+            </a>
+            <a href=""><img src="https://www.seekpng.com/png/detail/301-3019211_history-comments-history-icon-png.png"
+                    alt="">
+                <p>History</p>
+            </a>
+            <a href=""><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAGUo9F-Fk1KA69OPwEiG7Upjz5rsmPpxMic8Is26fqXHT9SE6OMinyo0PUkdYNhTljI4&usqp=CAU"
+                    alt="">
+                <p>Your videos</p>
+            </a>
+            <a href=""><img src="https://cdn.iconscout.com/icon/free/png-256/watch-later-1781603-1513853.png" alt="">
+                <p>watch later</p>
+            </a>
+            <a href=""><img
+                    src="https://www.pngfind.com/pngs/m/52-520060_free-png-download-down-arrow-grey-png-images.png"
+                    alt="">
+                <p>show-more</p>
+            </a>
+            <hr>
+        </div>
+        <div class="subscribed-list">
+            <h3>SUBSCRIBED</h3>
+            <a href=""><img
+                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                    alt="">
+                <p>Artist</p>
+            </a>
+            <a href=""><img src="https://yt3.googleusercontent.com/k5Lj-iJQyPZDtqO1yJJCgTWP8V8O6Rd3ktM5OkFEz7fDm0aTgsy7PJs7AUUSPMflxlTz9G92=s900-c-k-c0x00ffffff-no-rj" alt="">
+                <p>world affairs</p>
+            </a>
+            <a href=""><img src="https://yt3.googleusercontent.com/hWs6asGXYgcNwt2ydZbDnK3FFmGxgGS8dR9nQf-4EZ1kH-fkhnxfbcJ_yXL9q_Ord8y1lX4ZSg=s900-c-k-c0x00ffffff-no-rj" alt="">
+                <p>Study IQ</p>
+            </a>
+            <a href=""><img src="https://yt3.googleusercontent.com/ytc/AL5GRJVilSLQ1noeaMSEk-u3EbdQdi9PNVLHAo8jBDi8-Q=s900-c-k-c0x00ffffff-no-rj" alt="">
+                <p>wifi Study</p>
+            </a>
+            <a href=""><img src="https://yt3.googleusercontent.com/fEwYmmuJTq1Kgie6pb7qc-1SNkCBtZCkTChsl2QOSIWQoKLf16NpW-HzPDQEzeFif6LLg4YN=s900-c-k-c0x00ffffff-no-rj" alt="">
+                <p>Carversal</p>
+            </a>
+        </div>
+    </div>
+    <!-------- sidebar end -------->
+    <!--------- main start---------->
+    <div class="container">
+        <div class="banner">
+            <img src="https://marketplace.canva.com/EAFEUwUPzkY/1/0/1600w/canva-black-modern-vlogger-youtube-banner-voJxGX5HW3Q.jpg" alt="">
+        </div>
+        <div class="list-container">
+            <div class="vid-list">
+                <a href="play-video.html"><img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/08/learn-coding-online-for-free.webp" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <div class="vid-info">
+                        <a href="play-video.html">Learn how to code</a>
+                        <p>Frontend Developer</p>
+                        <p>15M Views &bull; 2 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://images.thrillophilia.com/image/upload/s--pHLqyshl--/c_fill,h_600,q_auto,w_975/f_auto,fl_strip_profile/v1/images/photos/000/143/371/original/1549374231_shutterstock_1095688061.jpg.jpg?1549374231" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbiUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <div class="vid-info">
+                        <a href="">Cycling on beach</a>
+                        <p>rider</p>
+                        <p>1M Views &bull; 4 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/04/Shopping-Malls-in-Indore_600x400-1280x720.jpg" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.herzindagi.info/image/2022/Jan/shopping-tips-for-save-money.jpg">
+                    <div class="vid-info">
+                        <a href="">Shopping in a mall</a>
+                        <p>Designer</p>
+                        <p>5M Views &bull; 7 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://res.cloudinary.com/enchanting/f_auto,q_100,w_1600,h_700,c_fill/et-web/2020/11/Switzerland-Engelberg-Shonegg-lake-with-alps.jpg" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://plus.unsplash.com/premium_photo-1661839699441-57249c99f386?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+                    <div class="vid-info">
+                        <a href="">nature of europe</a>
+                        <p>Nomad</p>
+                        <p>5M Views &bull; 2 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://images.squarespace-cdn.com/content/v1/5b0f793b29711403fa15efa8/1532098585965-07IYN0MCURCEWSG362VZ/people+business+meeting.jpg?format=1500w" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWVuJTIwcHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="vid-info">
+                        <a href=""> how to communicate with Indians</a>
+                        <p>Simon</p>
+                        <p>15M Views &bull; 2 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/46/e0/c1.jpg" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWVuJTIwcHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="vid-info">
+                        <a href="">Learn how to drive</a>
+                        <p>Driving instructor</p>
+                        <p>5M Views &bull; 6 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuc2lvbnxlbnwwfHwwfHw%3D&w=1000&q=80" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbiUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <div class="vid-info">
+                        <a href="">a beautigul mansion</a>
+                        <p>Engineer</p>
+                        <p>1M Views &bull; 9 Days ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid-list">
+                <a href=""><img src="https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200">
+                    <div class="vid-info">
+                        <a href="">top 10 cars</a>
+                        <p>supercar</p>
+                        <p>6M Views &bull; 1 week ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- main end---------->
+    <script src="app.js"></script>
+</body>
+
+</html>
